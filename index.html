@@ -28,7 +28,7 @@
 
 
     <!-- css connect -->
-    <link rel="stylesheet" href="./css/tailwind.config.css">
+
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -38,6 +38,8 @@
 
         <!-- navbar -->
         <div class="navbar bg-primary-content/50 shadow-sm">
+
+
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -62,6 +64,8 @@
                     <span class="font-semibold text-lg font-bangla">জানালা</span>
                 </a>
             </div>
+
+
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 space-x-4">
 
@@ -78,6 +82,8 @@
 
 
     </header>
+
+
     <!-- hero section -->
     <section class="w-11/12 mx-auto flex flex-col-reverse md:flex-row justify-between items-center gap-10 my-5">
 
@@ -94,7 +100,7 @@
                 <input type="text" class="input" placeholder="Enter Your Name" />
                 <label class="label">Password</label>
                 <input type="password" class="input" placeholder="Password" />
-                
+
             </fieldset>
             <button class="btn btn-primary mt-5">Get Started</button>
         </div>
@@ -107,8 +113,34 @@
     </section>
 
 
+    <section class="w-11/12 mx-auto text-center my-10 space-y-8">
+
+        <h1 class="text-3xl md:text-5xl font-bold"><span class="text-blue-500">Let's</span> Learn Vocabularies</h1>
+
+        <div id="lesson-container" class="flex justify-center items-center gap-3 flex-wrap">
+
+        </div>
+    </section>
 
 
+    <section class="w-11/12 mx-auto text-center my-10 bg-gray-200">
+        
+        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 ">
+
+            <div class="text-center py-20 space-y-5 col-span-full">
+                
+                <p class="font-bangla text-xl text-[#79716B]">আপনি এখনো কোন Lesson Select করেন ন</p>
+                <h1 class="font-bangla font-medium text-4xl text-[#292524]">একটি Lesson Select করুন।</h1>
+            </div>
+
+        </div>
+        
+
+    </section>
+
+
+    <!-- js -->
+    <script src="./script/script.js"></script>
 </body>
 
 </html>
