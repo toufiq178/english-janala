@@ -215,3 +215,29 @@ const displayLessons = (lessons) => {
 }
 
 loadLesson()
+
+
+
+
+
+document.getElementById("search-btn").addEventListener("click",() => {
+
+    removeActive()
+    
+    const inputSearch = document.getElementById("search-input");
+    const searchValue = inputSearch.value.toLowerCase().trim()
+    // console.log(searchValue);
+    
+    fetch("https://openapi.programming-hero.com/api/words/all")
+    .then(res => res.json())
+    .then(data => {
+        
+        const allWord = data.data ;
+        // console.log(allWord);
+        
+        const filterWord = allWord.filter(word => word.word.toLowerCase().includes(searchValue))
+        // console.log(filterWord);
+        displayWord(filterWord)
+    })
+
+})
