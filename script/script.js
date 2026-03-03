@@ -6,6 +6,11 @@ const createElement = (arr) => {
     return htmlElements.join(" ")
 }
 
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 
 
 const removeHidden = (status) => {
@@ -175,7 +180,7 @@ const displayWord = (words) => {
                 
                 <div class="flex justify-between ">
                     <button onclick="loadDetailWord(${word.id})" class="btn  text-[#374957] bg-[#1a90ff10] hover:bg-[#1a90ff80]"><i class="fa-solid fa-circle-info"></i></button>
-                    <button class="btn text-[#374957] bg-[#1a90ff10] hover:bg-[#1a90ff80]"><i class="fa-solid fa-volume-high"></i></button>
+                    <button onclick="pronounceWord('${word.word}')" class="btn text-[#374957] bg-[#1a90ff10] hover:bg-[#1a90ff80]"><i class="fa-solid fa-volume-high"></i></button>
                 </div>
             </div>
         
@@ -223,7 +228,7 @@ loadLesson()
 document.getElementById("search-btn").addEventListener("click",() => {
 
     removeActive()
-    
+
     const inputSearch = document.getElementById("search-input");
     const searchValue = inputSearch.value.toLowerCase().trim()
     // console.log(searchValue);
