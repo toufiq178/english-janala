@@ -8,6 +8,20 @@ const createElement = (arr) => {
 
 
 
+const removeHidden = (status) => {
+
+    if (status == true) {
+        
+        document.getElementById("loading-container").classList.remove("hidden");
+        document.getElementById("cards-section").classList.add("hidden");
+    } else{
+
+        document.getElementById("cards-section").classList.remove("hidden");
+        document.getElementById("loading-container").classList.add("hidden");
+
+        return
+    }
+}
 
 
 
@@ -21,6 +35,7 @@ const loadLesson = () => {
 
 const loadWord= (id) =>{
 
+     removeHidden(true);
     const url = `https://openapi.programming-hero.com/api/level/${id}`
     // console.log(url);
     fetch(url)
@@ -121,6 +136,8 @@ const displayDetails = (word) => {
 
 const displayWord = (words) => {
 
+    
+
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = ""
 
@@ -136,11 +153,14 @@ const displayWord = (words) => {
             </div>
 
         `
+
+         removeHidden(false);
         return
     }
 
     words.forEach(word => {
         
+         removeHidden(true);
         const card = document.createElement("div");
         card.innerHTML = `
 
@@ -161,8 +181,10 @@ const displayWord = (words) => {
         
         `
         cardContainer.append(card);
-        
+      
     });
+
+     removeHidden(false);
 }
 
 
